@@ -1,0 +1,39 @@
+<title>HTML Form</title>
+</head>
+<body>
+    <form method="post" action="#">
+        Name
+        <input type="text" name="coustmer_name" size="20" maxlength="10" autofocus><br>
+        Phone
+        <input type="tel" name="phone-number" maxlength="50"><br>
+        Email
+        <input type="mail" name="coustmer_email"><br>
+        Hidden
+        <input type="hidden" name="hidden"><br>
+        Number
+        <input type="number" name="quantity" min="1" max="5"><br>
+        color: <input type="color"><br>
+        Range: <input type="range" id="cowbell" name="cowbell" min="0" max="100" value="50" steps="20" /><br>
+
+        <label for="site-search">Search the site:</label>
+        <input type="search" id="site-search" name="q" /><button>search</button>
+        <fieldset>
+            <legand>Which taxi do you require?</legand>
+            <input type="radio" name="taxi" value="car"> car
+            <input type="radio" name="taxi" value="van"> van
+            <input type="radio" name="taxi" value="tuktuk"> Tuk Tuk 
+            
+            dropoff place
+            <input type="text" name="dropoff_place" list="destinations">
+
+            <datalist id="destinations">
+            <option value="Airport">
+            <option value="beach" >
+                s
+            </option>
+                </option>
+            </datalist>
+
+        </fieldset>
+    </form>
+</body>

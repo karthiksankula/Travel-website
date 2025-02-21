@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation</title>
+<style>
+    .error {
+        display: none;
+        color: red;
+        font-size: 0.8em;
+    }
+
+    .error.show {
+        display: block;
+    }
+</style>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+<form id="registrationForm" action="#" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <span class="error" id="nameError">Please enter your name.</span>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error" id="emailError">Please enter your email address.</span>
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <span class="error" id="passwordError">Please enter a password.</span>
+    </div>
+    <div>
+        <input type="submit" value="Submit">
+    </div>
+</form>
+
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        var nameInput = document.getElementById("name");
+        var emailInput = document.getElementById("email");
+        var passwordInput = document.getElementById("password");
+        var nameError = document.getElementById("nameError");
+        var emailError = document.getElementById("emailError");
+        var passwordError = document.getElementById("passwordError");
+
+        nameError.classList.remove("show");
+        emailError.classList.remove("show");
+        passwordError.classList.remove("show");
+
+        if (nameInput.validity.valueMissing) {
+            nameError.classList.add("show");
+            event.preventDefault();
+        }
+
+        if (emailInput.validity.valueMissing) {
+            emailError.classList.add("show");
+            event.preventDefault();
+        } else if (emailInput.validity.typeMismatch) {
+            emailError.textContent = "Please enter a valid email address.";
+            emailError.classList.add("show");
+            event.preventDefault();
+        }
+
+        if (passwordInput.validity.valueMissing) {
+            passwordError.classList.add("show");
+            event.preventDefault();
+        }
+    });
+</script>
+
+</body>
+</html>

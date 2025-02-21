@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 20px;">
+
+<h1 style="text-align: center; color: #333;">Shopping Cart </h1>
+
+<div style="margin-bottom: 20px;">
+  <label for="productName" style="margin-right: 10px;">Product Name:</label>
+  <input 
+    type="text" 
+    id="productName" 
+    placeholder="Enter product name" 
+    style="padding: 5px; margin-right: 10px; border: 1px solid #ccc; border-radius: 5px;">
+  <label for="productPrice" style="margin-right: 10px;">Price:</label>
+  <input 
+    type="number" 
+    id="productPrice" 
+    placeholder="Enter product price" 
+    style="padding: 5px; margin-right: 10px; border: 1px solid #ccc; border-radius: 5px;">
+  <button 
+    onclick="addToCart()" 
+    style="padding: 5px 10px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    Add to Cart
+  </button>
+</div>
+
+<div>
+  <h2 style="color: #333; margin-bottom: 10px;">Your Cart</h2>
+  <table id="cartTable" border="1" style="width: 100%; border-collapse: collapse; margin-bottom: 10px;">
+    <thead>
+      <tr style="background-color: #f8f9fa;">
+        <th style="padding: 10px; border: 1px solid #ddd;">Product Name</th>
+        <th style="padding: 10px; border: 1px solid #ddd;">Price</th>
+        <th style="padding: 10px; border: 1px solid #ddd;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <p id="totalPrice" style="font-weight: bold; color: #555;">Total Price: $0.00</p>
+</div>
+
+<script>
+  const cart = [];
+
+  function addToCart() {
+    const productName = document.getElementById('productName').value.trim();
+    const productPrice = parseFloat(document.getElementById('productPrice').value);
+
+    if (!productName || isNaN(productPrice) || productPrice <= 0) {
+      alert('Please enter valid product details.');
+      return;
+    }
+
+    cart.push({ name: productName, price: productPrice });
+    updateCart();
+  }
+
+  function updateCart() {
+    const cartTable = document.getElementById('cartTable').getElementsByTagName('tbody')[0];
+    cartTable.innerHTML = ''; 
+
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      const row = cartTable.insertRow();
+      row.insertCell(0).innerText = item.name;
+      row.insertCell(1).innerText = `$${item.price.toFixed(2)}`;
+      const actionCell = row.insertCell(2);
+
+      const removeButton = document.createElement('button');
+      removeButton.innerText = 'Remove';
+      removeButton.style.cssText = 'padding: 5px 10px; background-color: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer;';
+      removeButton.onclick = () => removeFromCart(index);
+      actionCell.appendChild(removeButton);
+
+      total += item.price;
+    });
+
+    document.getElementById('totalPrice').innerText = `Total Price: $${total.toFixed(2)}`;
+  }
+
+  function removeFromCart(index) {
+    cart.splice(index, 1); 
+    updateCart();
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My portfolio</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            color: #333;
+        }
+
+        /* Navigation styles */
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #f8b400;
+        }
+
+        /* Section styles */
+        section {
+            padding: 100px 20px; /* Adding space for the fixed navbar */
+            min-height: 100vh;
+        }
+
+        #introduction {
+            background-color: #f4f4f4;
+        }
+
+        #projects {
+            background-color: #e2e2e2;
+        }
+
+        #contact {
+            background-color: #d1d1d1;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section id="introduction">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Hello! I am [Sankula karthik], a passionate web developer with experience in building responsive and user-friendly websites. This is my portfolio where you can explore my work and get in touch with me.</p>
+    </section>
+
+    <!-- Project Gallery Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="gallery">
+            <!-- Example project -->
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>Brief description of Project 1</p>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p>Brief description of Project 2</p>
+            </div>
+            <!-- More projects can be added here -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you would like to work with me or just say hello, feel free to get in touch!</p>
+        <form action="submit_form.php" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 [Sankula karthik]. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

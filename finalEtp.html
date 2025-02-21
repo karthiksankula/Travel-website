@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <p>Shopping cart items:</p>
+    <div id="cart-items">
+    </div>
+    <p id="total-price">Total Price: $0.00</p>
+
+    <script>
+        const cart = [
+            { name: "Jeans", price: 10, quantity: 2 },
+            { name: "Shirts", price: 5, quantity: 4 },
+            { name: "Tshirts", price: 20, quantity: 5 }
+        ];
+
+        const cartItemsDiv = document.getElementById("cart-items");
+        let total = 0;
+
+        cart.forEach(item => {
+            const itemParagraph = document.createElement("p");
+            itemParagraph.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
+            cartItemsDiv.appendChild(itemParagraph);
+
+            total += item.price * item.quantity;
+        });
+
+        const totalPriceParagraph = document.getElementById("total-price");
+        totalPriceParagraph.textContent = `Total Price: $${total.toFixed(2)}`;
+    </script>
+</body>
+</html>
+

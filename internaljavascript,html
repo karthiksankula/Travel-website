@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>local compare method of string</title>
+    <script>
+        function verifyPassword() {
+            var pwd= document.getElementById("txtpwd").value;
+            var cpwd = document.getElementById("txtconfirm").value;
+            var result = pwd.localCompare(cpwd);
+            var iblError = document.getElementById(IblError);
+            IblError.innerHTML = (result==0)?"<front color='green'>Password Verified</front>";
+        }
+           
+    </script>
+</head>
+<body>
+   <div>
+    <label>Password</label>
+    <div>
+    <input type="password" id="txtpwd">
+    </div>
+    </div>
+    
+    
+</body>
+</html>
+  
+<!DOCTYPE html>
+<html>
+
+</html>

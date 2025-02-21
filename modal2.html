@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Modal</title>
+        <link rel="stylesheet" herf="../node_modules/bootstrap/dist/css/bootstrap.css">
+    </head>
+    
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Record Management</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    form {
+        margin-bottom: 20px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+    <form id="studentForm">
+        <label for="rollNo">Roll No.:</label>
+        <input type="text" id="rollNo" name="rollNo" required><br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="fatherName">Father Name:</label>
+        <input type="text" id="fatherName" name="fatherName" required><br><br>
+        <label for="program">Program:</label>
+        <select id="program" name="program" required>
+            <option value="MCA">MCA</option>
+            <option value="BCA">BCA</option>
+            <!-- Add more options as needed -->
+        </select><br><br>
+        <label for="feeStatus">Fee Status:</label>
+        <input type="text" id="feeStatus" name="feeStatus" required><br><br>
+        <button type="button" onclick="addStudent()">Submit</button>
+    </form>
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>Roll No.</th>
+                <th>Name</th>
+                <th>Father Name</th>
+                <th>Program</th>
+                <th>Fee Status</th>
+            </tr>
+        </thead>
+        <tbody id="studentTableBody">
+        </tbody>
+    </table>
+
+    <script>
+        function addStudent() {
+            var rollNo = document.getElementById("rollNo").value;
+            var name = document.getElementById("name").value;
+            var fatherName = document.getElementById("fatherName").value;
+            var program = document.getElementById("program").value;
+            var feeStatus = document.getElementById("feeStatus").value;
+
+            var student = { rollNo: rollNo, name: name, fatherName: fatherName, program: program, feeStatus: feeStatus };
+            students.push(student);
+
+            displayStudents();
+        }
+
+        function displayStudents() {
+            var tableBody = document.getElementById("studentTableBody");
+            tableBody.innerHTML = "";
+
+            for (var i = 0; i < students.length; i++) {
+                var student = students[i];
+                var row = "<tr><td>" + student.rollNo + "</td><td>" + student.name + "</td><td>" + student.fatherName + "</td><td>" + student.program + "</td><td>" + student.feeStatus + "</td></tr>";
+                tableBody.innerHTML += row;
+            }
+        }
+
+        var students = [];
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation</title>
+<style>
+    .error {
+        color: red;
+        font-size: 0.8em;
+    }
+</style>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+<form id="registrationForm" action="#" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" karthik>
+        <span class="error" id="nameError"></span>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error" id="emailError"></span>
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <span class="error" id="passwordError"></span>
+    </div>
+    <div>
+        <input type="submit" value="Submit">
+    </div>
+</form>
+
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        var nameInput = document.getElementById("name");
+        var emailInput = document.getElementById("email");
+        var passwordInput = document.getElementById("password");
+        var nameError = document.getElementById("nameError");
+        var emailError = document.getElementById("emailError");
+        var passwordError = document.getElementById("passwordError");
+
+        nameError.textContent = "";
+        emailError.textContent = "";
+        passwordError.textContent = "";
+
+        if (nameInput.validity.valueMissing) {
+            nameError.textContent = "Please enter your name.";
+            event.preventDefault();
+        }
+
+        if (emailInput.validity.valueMissing) {
+            emailError.textContent = "Please enter your email address.";
+            event.preventDefault();
+        } else if (emailInput.validity.typeMismatch) {
+            emailError.textContent = "Please enter a valid email address.";
+            event.preventDefault();
+        }
+
+        if (passwordInput.validity.valueMissing) {
+            passwordError.textContent = "Please enter a password.";
+            event.preventDefault();
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kumbh+Sans">
+    <link rel="stylesheet" href="sneekers.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">sneakers</div>
+        <nav >
+            <ul class="nav-links">
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-icons">
+            <a href="#" class="cart-icon">&#128722;</a>
+            <img src="./images/image-avatar.png" alt="User Profile" class="profile-icon">
+        </div>
+    </header>
+
+    <main class="product-container">
+
+        <div class="product-images">
+            <img src="./images/image-product-1.jpg" alt="Sneaker" class="main-image">
+            <div class="thumbnail-row">
+                <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail 1" class="thumbnail active">
+                <img src="./images/image-product-2-thumbnail.jpg" alt="Thumbnail 2" class="thumbnail">
+                <img src="./images/image-product-3-thumbnail.jpg" alt="Thumbnail 3" class="thumbnail">
+                <img src="./images/image-product-4-thumbnail.jpg" alt="Thumbnail 4" class="thumbnail">
+            </div>
+        </div>
+
+        <div class="product-details">
+            <p class="product-brand">SNEAKER COMPANY</p>
+            <h1 class="product-title">Fall Limited Edition Sneakers</h1>
+            <p class="product-description">
+                These low-profile sneakers are your perfect casual wear companion. 
+                Featuring a durable rubber outer sole, they'll withstand everything 
+                the weather can offer.
+            </p>
+            <div class="price">
+                <div class="current-price">$125.00 <span class="discount">50%</span></div>
+                <div class="original-price">$250.00</div>
+            </div>
+            <div class="quantity-cart">
+                <div class="quantity">
+                    <button class="minus">-</button>
+                    <span class="quantity-number">0</span>
+                    <button class="plus">+</button>
+                </div>
+                <button class="add-to-cart">
+                    &#128722; Add to cart
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+    
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #f68428;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cart-icon {
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Product part */
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-images {
+    flex: 1;
+    max-width: 40%;
+}
+
+.main-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.thumbnail-row {
+    display: flex;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 20%;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: border 0.3s;
+}
+
+.thumbnail.active {
+    border: 2px solid #f68428;
+}
+
+/* Details */
+.product-details {
+    flex: 1;
+    max-width: 50%;
+    padding-left: 30px;
+}
+
+.product-brand {
+    text-transform: uppercase;
+    color: #f68428;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.product-description {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.price {
+    margin-bottom: 30px;
+}
+
+.current-price {
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.discount {
+    color: #f68428;
+    background-color: #ffe8d4;
+    padding: 3px 5px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #aaa;
+    font-size: 1rem;
+}
+
+/* Cart part */
+.quantity-cart {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.quantity button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.quantity-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.add-to-cart {
+    background-color: #f68428;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-to-cart:hover {
+    background-color: #e3701d;
+}

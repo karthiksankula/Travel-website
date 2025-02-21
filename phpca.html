@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Travel Blog</title>
+    <link rel="stylesheet" href="phpca.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#register">Register</a></li>
+            <li><a href="#profile">Profile</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section" id="home">
+        <h1>Explore The World With Us</h1>
+        <p>Your guide to beautiful places, travel tips, and unforgettable experiences</p>
+        <a href="#register" class="btn">Join Our Community</a>
+    </div>
+
+    <!-- Blog Listing -->
+    <div class="container" id="blogs">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-list">
+            <div class="blog-item">
+                <h3>Blog Title 1</h3>
+                <p>by Author 1 on 2023-10-01</p>
+                <p>This is a sample blog content...<p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="blog-item">
+                <h3>Blog Title 2</h3>
+                <p>by Author 2 on 2023-09-28</p>
+                <p>This is a sample blog content...<p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form-container" id="login">
+        <h2>Login</h2>
+        <form method="POST" action="login.php">
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="form-container" id="register">
+        <h2>Create an Account</h2>
+        <form method="POST" action="register.php">
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+
+    <!-- Profile Management -->
+    <div class="form-container" id="profile">
+        <h2>Your Profile</h2>
+        <form method="POST" action="profile.php">
+            <label for="username">Username:</label>
+            <input type="text" name="username" value="SampleUser" required>
+            <label for="email">Email:</label>
+            <input type="email" name="email" value="user@example.com" required>
+            <button type="submit" class="btn">Update Profile</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 My Travel Blog. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
